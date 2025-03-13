@@ -19,7 +19,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'echo "Tests passed!"'
+                bat 'echo "Tests passed!"'  // Използвай "bat" вместо "sh" за Windows
             }
         }
     }
