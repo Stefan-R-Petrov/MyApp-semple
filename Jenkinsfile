@@ -13,7 +13,7 @@
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Добави реални билд команди тук
+                // Ако имаш билд команда, добави я тук
             }
         }
 
@@ -21,7 +21,7 @@
             steps {
                 echo 'Running tests...'
                 script {
-                    sh 'echo "Tests passed!"'
+                    sh 'echo "Tests passed!"'  // Тестване
                 }
             }
         }
@@ -39,7 +39,7 @@
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Добави деплой стъпки
+                // Ако имаш деплой команда, добави я тук
             }
         }
     }
