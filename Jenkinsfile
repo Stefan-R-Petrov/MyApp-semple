@@ -4,28 +4,34 @@
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/Stefan-R-Petrov/MyApp-semple.git'
+                script {
+                    checkout scm
+                }
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                // Добави билд команди тук
+                // Добави реални билд команди тук
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'echo "Tests passed!"'
+                script {
+                    sh 'echo "Tests passed!"'
+                }
             }
         }
 
         stage('Package') {
             steps {
                 echo 'Creating a ZIP package...'
-                sh 'zip -r build.zip *'
+                script {
+                    sh 'zip -r build.zip *'
+                }
                 archiveArtifacts artifacts: 'build.zip', fingerprint: true
             }
         }
@@ -33,7 +39,7 @@
         stage('Deploy') {
             steps {
                 echo 'Deploying application...'
-                // Добави деплой команди тук
+                // Добави деплой стъпки
             }
         }
     }
